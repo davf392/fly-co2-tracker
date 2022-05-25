@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Fly Co2 Track</string>
+    <string name="label_hint_departure">Aéroport de départ</string>
+    <string name="label_hint_arrival">Aéroport d\'arrivée</string>
+    <string name="btn_toggle_one_way">ALLER SIMPLE</string>
+    <string name="btn_toggle_return_trip">ALLER RETOUR</string>
+    <string name="btn_toggle_economy">NORMAL</string>
+    <string name="btn_toggle_business">BUSINESS</string>
+    <string name="btn_toggle_comfort">CONFORT</string>
+    <string name="label_distance_flight">Distance :</string>
+    <string name="default_distance_in_kms">0 km</string>
+    <string name="btn_calculate_footprint">CALCULER</string>
+</resources>

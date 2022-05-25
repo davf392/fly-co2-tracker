@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/simulationFragment">
+
+    <fragment
+        android:id="@+id/simulationFragment"
+        android:name="com.idplus.flightfootprintcalculator.SimulationFragment"
+        android:label="GES Tracker"
+        tools:layout="@layout/fragment_simulation" >
+        <action
+            android:id="@+id/action_simulationFragment_to_footprintResultFragment"
+            app:destination="@id/footprintResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/footprintResultFragment"
+        android:name="com.idplus.flightfootprintcalculator.FootprintResultFragment"
+        android:label="Footprint Result"
+        tools:layout="@layout/fragment_footprint_result" />
+</navigation>
