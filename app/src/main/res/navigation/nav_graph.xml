@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/simulationFragment"
-        android:name="com.idplus.flightfootprintcalculator.SimulationFragment"
+        android:name="com.idplus.flyco2tracker.SimulationFragment"
         android:label="GES Tracker"
         tools:layout="@layout/fragment_simulation" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/footprintResultFragment"
-        android:name="com.idplus.flightfootprintcalculator.FootprintResultFragment"
+        android:name="com.idplus.flyco2tracker.FootprintResultFragment"
         android:label="Footprint Result"
         tools:layout="@layout/fragment_footprint_result" />
 </navigation>

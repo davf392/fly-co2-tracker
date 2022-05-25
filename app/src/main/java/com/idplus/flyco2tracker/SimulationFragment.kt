@@ -1,4 +1,4 @@
-package com.idplus.flightfootprintcalculator
+package com.idplus.flyco2tracker
 
 import android.content.Context
 import android.location.Location.distanceBetween
@@ -12,13 +12,13 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.idplus.flightfootprintcalculator.Airport.ParsingKeys.AIRPORT_NAME_ID
-import com.idplus.flightfootprintcalculator.Airport.ParsingKeys.CITY_NAME_ID
-import com.idplus.flightfootprintcalculator.Airport.ParsingKeys.COUNTRY_IATA_ID
-import com.idplus.flightfootprintcalculator.Airport.ParsingKeys.COUNTRY_NAME_ID
-import com.idplus.flightfootprintcalculator.Airport.ParsingKeys.LATITUDE_ID
-import com.idplus.flightfootprintcalculator.Airport.ParsingKeys.LONGITUDE_ID
-import com.idplus.flightfootprintcalculator.databinding.FragmentSimulationBinding
+import com.idplus.flyco2tracker.Airport.ParsingKeys.AIRPORT_NAME_ID
+import com.idplus.flyco2tracker.Airport.ParsingKeys.CITY_NAME_ID
+import com.idplus.flyco2tracker.Airport.ParsingKeys.COUNTRY_IATA_ID
+import com.idplus.flyco2tracker.Airport.ParsingKeys.COUNTRY_NAME_ID
+import com.idplus.flyco2tracker.Airport.ParsingKeys.LATITUDE_ID
+import com.idplus.flyco2tracker.Airport.ParsingKeys.LONGITUDE_ID
+import com.idplus.flyco2tracker.databinding.FragmentSimulationBinding
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream

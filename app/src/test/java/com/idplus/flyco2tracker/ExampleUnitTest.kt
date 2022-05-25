@@ -1,4 +1,4 @@
-package com.idplus.flightfootprintcalculator
+package com.idplus.flyco2tracker
 
 import org.junit.Test
 

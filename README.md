@@ -1,28 +1,24 @@
-# Calculateur d'empreinte carbone d'un vol en avion
+# Fly Co2 Tracker
 
-## Roadmap
+## Description
 
-Design d'un horizontal bar chart pour comparer l'empreinte du vol avec:
-- budget carbone annuel pour respecter les accords de Paris
-- moyenne des émissions d'un français
+This app allows you to calculate in a very simple way the carbon footprint of a flight.
 
-## Information sur les aéroports
+It's using the public algorithm created by futur eco: https://github.com/laem/futureco-data/blob/master/data/avion.yaml
 
-https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat
+The list of airports and their relative information are available [here](https://raw.githubusercontent.com/jpatokal/openflights/master/data/airlines.dat)
 
-## Algorithme
 
-Inputs :
+## Method of calculation
+
+### Inputs
 
 --> Ville de départ ? (aeroportDepart ?)
 --> Ville d'arrivée ? (aeroportArrivee ?)
 --> allerRetour ? (true or false)
 --> classeVoyage ? (1ère classe, 2nde classe)
 
-## Formule de calcul de l'empreinte carbone
-
-Le simulateur est open sources et les données sont publiques :
-https://github.com/laem/futureco-data/blob/master/data/avion.yaml
+### Algorithm
 
 distanceVolAller = distanceBetween(aeroportDepart, aeroportArrivee)
 
@@ -31,7 +27,7 @@ empreinteVol = ( distanceVolAller * ( allerRetour ? 2 : 1 ) * ( impactCarboneUni
 Pourcentage du budget annuel de C02eq = ( empreinteVol / 2000 ) * 100
 
 
-###### impact carbone unitaire ######
+### impact carbone unitaire
 
 if distanceVolAller < 500:
 impactCarboneUnitaire = (0.161 + 0.181) / 2
@@ -45,14 +41,14 @@ else
 impactCarboneUnitaire = 0.083
 
 
-###### coefficient forçage radiatif ######
+### coefficient forçage radiatif 
 
 estimation conservatrice : 2 (default)
 
 estimation la + récente : 3
 
 
-###### malus confort ######
+### malus confort
 
 if classeVoyage = 'normal' (2nde classe)
 (distanceVolAller < 1500km) ? 0.96 : 0.8
@@ -61,3 +57,15 @@ malus = (distanceVolAller < 1500km) ? 1.26 : 1.54
 else if classeVoyage = 'confort' (super confort VIP)
 malus = 2.4
 
+
+## Roadmap
+
+- upload Flight carbon footprint app to new github repo
+- find a good name for the flight carbon footprint calculator app
+- send arguments (distance, oneway?, comfort) to ResultFragment
+- auto-complete airport names using airlines.txt (optional: use IATA as filter)
+- Implement carbon footprint algorithm & display on the 2nd fragment
+- Display the percentage off the carbon annual budget
+- Design of an horizontal bar chart to let the user compare the flight carbon footprint with :
+  - Annual carbon budget required to respect Paris accords
+  - Annual emissions per capita for France

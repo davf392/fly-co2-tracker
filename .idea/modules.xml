@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Flight_Footprint_Calculator.iml" filepath="$PROJECT_DIR$/.idea/modules/Flight_Footprint_Calculator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Flight_Footprint_Calculator.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Flight_Footprint_Calculator.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Flight_Footprint_Calculator.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Flight_Footprint_Calculator.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Flight_Footprint_Calculator.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Flight_Footprint_Calculator.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Flight_Footprint_Calculator.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Flight_Footprint_Calculator.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Fly_Co2_Tracker.iml" filepath="$PROJECT_DIR$/.idea/modules/Fly_Co2_Tracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fly_Co2_Tracker.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fly_Co2_Tracker.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fly_Co2_Tracker.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fly_Co2_Tracker.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fly_Co2_Tracker.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fly_Co2_Tracker.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fly_Co2_Tracker.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fly_Co2_Tracker.app.unitTest.iml" />
     </modules>
   </component>
 </project>

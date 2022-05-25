@@ -1,4 +1,4 @@
-package com.idplus.flightfootprintcalculator
+package com.idplus.flyco2tracker
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
