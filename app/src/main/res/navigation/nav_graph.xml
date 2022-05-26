@@ -8,15 +8,26 @@
     <fragment
         android:id="@+id/simulationFragment"
         android:name="com.idplus.flyco2tracker.SimulationFragment"
-        android:label="GES Tracker"
+        android:label="Fly CO2 Tracker"
         tools:layout="@layout/fragment_simulation" >
         <action
-            android:id="@+id/action_simulationFragment_to_footprintResultFragment"
-            app:destination="@id/footprintResultFragment" />
+            android:id="@+id/action_simulationFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/footprintResultFragment"
-        android:name="com.idplus.flyco2tracker.FootprintResultFragment"
-        android:label="Footprint Result"
-        tools:layout="@layout/fragment_footprint_result" />
+        android:id="@+id/resultFragment"
+        android:name="com.idplus.flyco2tracker.ResultFragment"
+        android:label="Carbon Footprint Result"
+        tools:layout="@layout/fragment_result" >
+        <argument
+            android:name="total_distance"
+            app:argType="integer" />
+        <argument
+            android:name="return_trip"
+            app:argType="boolean" />
+        <argument
+            android:name="comfort_category"
+            app:argType="string" />
+    </fragment>
 </navigation>

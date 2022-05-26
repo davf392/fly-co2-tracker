@@ -121,25 +121,23 @@ class SimulationFragment : Fragment() {
             // get total distance -> _totalDistance
 
             // is it one way travel ? or return trip ?
-            var oneWay: Boolean = false
-            if( binding.toggleGrpReturnFlight.checkedButtonId == R.id.btn_one_way)
-                oneWay = true
+            var returnTrip = false
+            if( binding.toggleGrpReturnFlight.checkedButtonId == R.id.btn_return)
+                returnTrip = true
 
             // set comfort value by default to O (economy)
-            var comfort = 0
+            var comfort = "normal"
             if(binding.toggleGrpComfortClass.checkedButtonId == R.id.btn_class_business)
-                comfort = 1
+                comfort = "business"
             else if(binding.toggleGrpComfortClass.checkedButtonId == R.id.btn_class_comfort)
-                comfort = 2
+                comfort = "comfort"
 
             // send parameters to next fragment then switch display
             Log.d(TAG, "flight carbon footprint ready to be calculated")
-            Log.d(TAG, "distance = $_totalDistance km")
-            Log.d(TAG, "one way ? $oneWay")
-            Log.d(TAG, "comfort ? $comfort")
 
             // then we ask the navigation controller to redirect the user to the result fragment
-            view.findNavController().navigate(R.id.action_simulationFragment_to_footprintResultFragment)
+            val action = SimulationFragmentDirections.actionSimulationFragmentToResultFragment(_totalDistance, returnTrip, comfort)
+            view.findNavController().navigate(action)
         }
 
         return view

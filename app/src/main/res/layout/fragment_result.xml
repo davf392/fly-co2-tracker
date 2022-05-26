@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FootprintResultFragment" >
+    tools:context=".ResultFragment" >
 
     <TextView
         android:id="@+id/label_resultat"
@@ -16,15 +16,16 @@
         android:text="Votre vol équivaut à" />
 
     <LinearLayout
+        android:id="@+id/layout_annual_carbon_budget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="5dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
         android:background="@android:color/holo_green_dark"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="5dp">
 
         <TextView
             android:id="@+id/value_percentage_budget"
@@ -32,21 +33,21 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:textStyle="bold"
             android:text="0 %"
             android:textColor="@color/white"
-            android:textSize="58sp" />
+            android:textSize="58sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/label_carbon_budget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="15dp"
-            android:textSize="32sp"
+            android:gravity="center"
+            android:text="du budget\nannuel"
             android:textColor="@color/white"
-            android:text="du budget\nannuel" />
+            android:textSize="32sp" />
     </LinearLayout>
 
     <TextView
