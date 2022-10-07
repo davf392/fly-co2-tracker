@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fly Co2 Track</string>
     <string name="label_hint_departure">Aéroport de départ</string>
