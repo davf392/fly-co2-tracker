@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
             name="resultViewModel"
             type="com.idplus.flyco2tracker.ResultViewModel" />
     </data>
-    
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".ResultFragment" >
-    
+
         <TextView
             android:id="@+id/label_resultat"
             android:layout_width="wrap_content"
@@ -21,50 +22,59 @@
             android:layout_marginTop="15dp"
             android:layout_gravity="center_horizontal"
             android:text="Votre vol équivaut à" />
-    
-        <LinearLayout
-            android:id="@+id/layout_annual_carbon_budget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/holo_green_dark"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp">
-    
-            <TextView
-                android:id="@+id/value_percentage_budget"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:text="@{@string/percentage_off_budget(resultViewModel.percentageOffBudget)}"
-                android:textColor="@color/white"
-                android:textSize="58sp"
-                android:textStyle="bold" />
-    
-            <TextView
-                android:id="@+id/label_carbon_budget"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="15dp"
-                android:gravity="center"
-                android:text="du budget\nannuel"
-                android:textColor="@color/white"
-                android:textSize="32sp" />
-        </LinearLayout>
 
         <TextView
             android:id="@+id/label_total_ges"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:layout_marginTop="15dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:text="@{@string/total_carbon_budget(resultViewModel.totalCarbon)}" />
-    
+
+        <LinearLayout
+            android:id="@+id/layout_annual_carbon_budget"
+            android:layout_width="wrap_content"
+            android:layout_height="79dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_green_dark"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp" >
+
+            <TextView
+                android:id="@+id/value_percentage_budget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="@{@string/percentage_off_budget(resultViewModel.percentageOffBudget)}"
+                android:textColor="@color/white"
+                android:textSize="54sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_carbon_budget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:gravity="center"
+                android:text="@string/budget_carbon_percentage"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/explication_budget_carbon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="12dp"
+            android:textSize="20sp"
+            android:text="@string/explication_budget" />
+
     </LinearLayout>
 </layout>

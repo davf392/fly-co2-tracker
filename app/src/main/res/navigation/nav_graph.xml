@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.idplus.flyco2tracker.ResultFragment"
-        android:label="Carbon Footprint Result"
+        android:label="Vos émissions de CO2"
         tools:layout="@layout/fragment_result" >
         <argument
             android:name="total_distance"

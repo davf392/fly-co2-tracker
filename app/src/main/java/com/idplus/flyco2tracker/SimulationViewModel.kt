@@ -22,6 +22,7 @@ class SimulationViewModel : ViewModel() {
 
     var isReturnTrip: Boolean = false
     var comfortValue: String = ""
+    var airportDataLoaded: Boolean = false
 
     // initialise distance value live data to display in the layout
     private val _distanceValueKm = MutableLiveData(0)
@@ -29,6 +30,7 @@ class SimulationViewModel : ViewModel() {
 
 
     init {
+        Log.d(TAG, "creating view model instance")
     }
 
     /**
@@ -38,6 +40,9 @@ class SimulationViewModel : ViewModel() {
         val airports = mutableListOf<Airport>()
         var string: String? = ""
         val reader = BufferedReader(InputStreamReader(`input`))
+
+        Log.d(TAG, "uploading information from airport data local file")
+
         while (true) {
             try {
                 if (reader.readLine().also { string = it } == null) break
@@ -60,6 +65,8 @@ class SimulationViewModel : ViewModel() {
             }
         }
         `input`.close()
+
+        airportDataLoaded = true
 
         return airports
     }
@@ -89,5 +96,9 @@ class SimulationViewModel : ViewModel() {
     fun clearTotalDistance() {
         Log.d(TAG, "clearing total distance in kms")
         _distanceValueKm.value = 0
+    }
+
+    override fun onCleared() {
+        Log.i(TAG, "view model cleared")
     }
 }

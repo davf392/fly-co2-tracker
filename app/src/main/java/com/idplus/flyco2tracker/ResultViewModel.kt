@@ -84,11 +84,22 @@ class ResultViewModel(distance: Int, returnTrip: Boolean, comfort: String): View
 
     fun getResultLayoutColor(): Int {
         // pick the right color to visualize the impact of the carbon footprint result
-        var colorBudget = Color.parseColor("#83621f")
-        if(_percentageOffBudget.value!! in 51..100)
-            colorBudget = Color.parseColor("#531919")
-        else if(_percentageOffBudget.value!! >= 100)
-            colorBudget = Color.parseColor("#191919")
+        var colorBudget = Color.parseColor("#e1d738")
+
+        if(_percentageOffBudget.value!! in 20..30)
+            colorBudget = Color.parseColor("#efc33a")
+        else if(_percentageOffBudget.value!! in 30..40)
+            colorBudget = Color.parseColor("#f97b27")
+        else if(_percentageOffBudget.value!! in 40..50)
+            colorBudget = Color.parseColor("#fc3e14")
+        else if(_percentageOffBudget.value!! in 50..60)
+            colorBudget = Color.parseColor("#ff0000")
+        else if(_percentageOffBudget.value!! in 60..70)
+            colorBudget = Color.parseColor("#aa0000")
+        else if(_percentageOffBudget.value!! in 70..80)
+            colorBudget = Color.parseColor("#850000")
+        else if(_percentageOffBudget.value!! >= 80)
+            colorBudget = Color.parseColor("#000000")
 
         return colorBudget
     }
