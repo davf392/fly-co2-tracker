@@ -99,7 +99,7 @@ class ResultViewModel(distance: Int, returnTrip: Boolean, comfort: String): View
         else if(_percentageOffBudget.value!! in 70..80)
             colorBudget = Color.parseColor("#850000")
         else if(_percentageOffBudget.value!! >= 80)
-            colorBudget = Color.parseColor("#000000")
+            colorBudget = Color.parseColor("#530000")
 
         return colorBudget
     }
