@@ -18,6 +18,6 @@ class Airport {
     }
 
     override fun toString(): String {
-        return "$country, $name ($iata)"
+        return "$name, $country ($iata)"
     }
 }

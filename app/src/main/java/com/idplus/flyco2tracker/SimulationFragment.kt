@@ -1,6 +1,5 @@
 package com.idplus.flyco2tracker
 
-import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -46,9 +44,27 @@ class SimulationFragment : Fragment() {
             airportList = viewModel.readAirportDataFile(this.resources.openRawResource(R.raw.airlines))
 
         // and set default adapter for both AutoCompleteTextView (from & to)
-        val adapter = ArrayAdapter(activity as Context, android.R.layout.simple_list_item_1, airportList)
-        binding.autoCompleteAirportFrom.setAdapter(adapter)
-        binding.autoCompleteAirportTo.setAdapter(adapter)
+        context?.let { ctx ->
+            val airportAdapter = AirportAdapter(ctx, R.layout.airport_item, airportList)
+            binding.autoCompleteAirportFrom.setAdapter(airportAdapter)
+            binding.autoCompleteAirportFrom.setOnItemClickListener { parent, _, position, _ ->
+                val city = airportAdapter.getItem(position) as Airport
+                binding.autoCompleteAirportFrom.setText(city.name)
+            }
+
+            // hide keyboard upon scrolling down the results in the drop down list
+//            binding.autoCompleteAirportFrom.setOnTouchListener { view, motionEvent ->
+//
+//                val manager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//                manager.hideSoftInputFromWindow(view.windowToken, 0)
+//            }
+
+            binding.autoCompleteAirportTo.setAdapter(airportAdapter)
+            binding.autoCompleteAirportTo.setOnItemClickListener { parent, _, position, _ ->
+                val city = airportAdapter.getItem(position) as Airport
+                binding.autoCompleteAirportTo.setText(city.name)
+            }
+        }
 
         // make clear button appear or disappear depending whether the text view is empty or not
         binding.autoCompleteAirportFrom.addTextChangedListener(object : TextWatcher {
