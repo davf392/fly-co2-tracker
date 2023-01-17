@@ -14,5 +14,5 @@
     <string name="budget_carbon_percentage">Budget CO2\n/an/pers</string>
     <string name="explication_budget">Le <b>budget CO2</b> c\'est <u>2 tonnes équivalent de CO2 par an</u>, il s\'agit de la quantité de gaz à effet de serre (GES) émise par personne dans un monde neutre en CO2.\n\n C\'est aussi <u>l\'objectif à atteindre d\'ici à 2050</u> pour respecter les engagements\nde <b>l\'Accord de Paris</b> :\nmaintenir l\'augmentation de la température mondiale à un niveau inférieur à 2°C.\n\n Aujourd\'hui, en moyenne,\n<u>chaque français émet 10 tCO2/an</u>.</string>
     <string name="unit_carbon_footprint">%d kg CO2e</string>
-    <string name="text_view_result">Découvrez l\'impact sur le climat de votre itinéraire en comparaison selon les différents moyens de transport</string>
+    <string name="text_view_result">Découvrez l\'impact sur le climat de votre itinéraire en comparaison avec les différents moyens de transport</string>
 </resources>

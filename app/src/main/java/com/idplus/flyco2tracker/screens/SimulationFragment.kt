@@ -148,7 +148,7 @@ class SimulationFragment : Fragment() {
 
             // then we ask the navigation controller to redirect the user to the result fragment
             view.findNavController().navigate(
-                com.idplus.flyco2tracker.SimulationFragmentDirections.actionSimulationFragmentToResultFragment(
+                SimulationFragmentDirections.actionSimulationFragmentToResultFragment(
                     viewModel.distanceValueKm.value!!,  // the total distance to take into account
                     viewModel.isReturnTrip,   // is it a return trip or not
                     viewModel.comfortValue    // carbon footprint also depends on travel comfort category
