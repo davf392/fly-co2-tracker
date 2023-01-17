@@ -9,6 +9,14 @@
     <color name="primaryLightTextColor">#e0f7fa</color>
     <color name="secondaryLightTextColor">#f5f5f5</color>
     <color name="primaryDarkTextColor">#00363e</color>
-    <color name="secondaryDarkTextColor">#00363d</color>
     <color name="white">#ffffff</color>
+
+
+    <color name="md_red_500">#e57373</color>
+    <color name="md_deep_orange_400">#ffb74d</color>
+    <color name="md_yellow_A700">#fef176</color>
+    <color name="md_green_700">#7bdcb5</color>
+    <color name="md_indigo_700">#c25c81</color>
+    <color name="md_deep_indigo">#8e0936</color>
+    <color name="md_violet">#866ba7</color>
 </resources>

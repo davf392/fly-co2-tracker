@@ -1,4 +1,4 @@
-package com.idplus.flyco2tracker
+package com.idplus.flyco2tracker.model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

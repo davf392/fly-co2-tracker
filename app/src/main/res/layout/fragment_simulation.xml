@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".SimulationFragment" >
+    tools:context=".screens.SimulationFragment" >
     <data>
         <variable
             name="simulationViewModel"
-            type="com.idplus.flyco2tracker.SimulationViewModel" />
+            type="com.idplus.flyco2tracker.model.SimulationViewModel" />
     </data>
 
     <LinearLayout

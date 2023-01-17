@@ -1,12 +1,14 @@
-package com.idplus.flyco2tracker
+package com.idplus.flyco2tracker.screens
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.idplus.flyco2tracker.model.ResultViewModelFactory
 import com.idplus.flyco2tracker.databinding.FragmentResultBinding
+import com.idplus.flyco2tracker.model.ResultViewModel
 
 
 class ResultFragment : Fragment() {
@@ -32,11 +34,8 @@ class ResultFragment : Fragment() {
         viewModelFactory = ResultViewModelFactory(result.totalDistance, result.returnTrip, result.comfortCategory)
         resultViewModel = ViewModelProvider(this, viewModelFactory).get(ResultViewModel::class.java)
 
-        // we assign the layout's view model created by data binding to the ResultViewModel property
-        binding.resultViewModel = resultViewModel
-
-        // get the background color for the total budget percentage layout
-        binding.layoutAnnualCarbonBudget.setBackgroundColor(resultViewModel.getResultLayoutColor())
+        binding.resultModel = resultViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
 
         return view
     }

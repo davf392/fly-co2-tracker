@@ -1,4 +1,4 @@
-package com.idplus.flyco2tracker
+package com.idplus.flyco2tracker.adapter
 
 import android.app.Activity
 import android.content.Context
@@ -12,6 +12,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Filter
 import android.widget.TextView
+import com.idplus.flyco2tracker.R
+import com.idplus.flyco2tracker.data.Airport
 import java.text.Normalizer
 import java.text.Normalizer.normalize
 import java.util.*
@@ -43,7 +45,8 @@ class AirportAdapter(private val mContext: Context, private val mLayoutResId: In
         }
 
         try {
-            val airportAutoCompleteItemName: TextView = convertView as TextView? ?: LayoutInflater.from(context).inflate(R.id.airport_name, parent, false) as TextView
+            val airportAutoCompleteItemName: TextView = convertView as TextView? ?: LayoutInflater.from(context).inflate(
+                R.id.airport_name, parent, false) as TextView
             val airport: Airport = getItem(position)
 
             airportAutoCompleteItemName.text = airport.name

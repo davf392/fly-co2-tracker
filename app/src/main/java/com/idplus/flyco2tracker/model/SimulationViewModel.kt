@@ -1,10 +1,11 @@
-package com.idplus.flyco2tracker
+package com.idplus.flyco2tracker.model
 
 import android.location.Location
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.idplus.flyco2tracker.data.Airport
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream

@@ -1,4 +1,4 @@
-package com.idplus.flyco2tracker
+package com.idplus.flyco2tracker.screens
 
 import android.os.Bundle
 import android.text.Editable
@@ -10,7 +10,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.idplus.flyco2tracker.data.Airport
+import com.idplus.flyco2tracker.adapter.AirportAdapter
+import com.idplus.flyco2tracker.R
 import com.idplus.flyco2tracker.databinding.FragmentSimulationBinding
+import com.idplus.flyco2tracker.model.SimulationViewModel
 
 
 class SimulationFragment : Fragment() {
@@ -144,7 +148,7 @@ class SimulationFragment : Fragment() {
 
             // then we ask the navigation controller to redirect the user to the result fragment
             view.findNavController().navigate(
-                SimulationFragmentDirections.actionSimulationFragmentToResultFragment(
+                com.idplus.flyco2tracker.SimulationFragmentDirections.actionSimulationFragmentToResultFragment(
                     viewModel.distanceValueKm.value!!,  // the total distance to take into account
                     viewModel.isReturnTrip,   // is it a return trip or not
                     viewModel.comfortValue    // carbon footprint also depends on travel comfort category
