@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter
 import android.widget.Filter
 import android.widget.TextView
 import com.idplus.flyco2tracker.R
-import com.idplus.flyco2tracker.data.Airport
+import com.idplus.flyco2tracker.model.Airport
 import java.text.Normalizer
 import java.text.Normalizer.normalize
 import java.util.*

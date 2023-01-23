@@ -3,83 +3,104 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".screens.SimulationFragment" >
+    tools:context=".simulation.SimulationFragment" >
     <data>
         <variable
             name="simulationViewModel"
-            type="com.idplus.flyco2tracker.model.SimulationViewModel" />
+            type="com.idplus.flyco2tracker.simulation.SimulationViewModel" />
+
+        <variable
+            name="fragment"
+            type="com.idplus.flyco2tracker.simulation.SimulationFragment" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp">
+        android:padding="8dp">
 
         <LinearLayout
+            android:id="@+id/ll_airport_departure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/icon_plane_take_off"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_gravity="center_vertical"
                 app:srcCompat="@drawable/ic_plane_take_off" />
 
             <AutoCompleteTextView
                 android:id="@+id/auto_complete_airport_from"
-                android:layout_width="315dp"
-                android:layout_height="64dp"
+                android:layout_width="317dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp"
                 android:dropDownWidth="300dp"
                 android:hint="@string/label_hint_departure"
                 android:singleLine="true"
-                android:text="" />
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.024"
+                app:layout_constraintStart_toEndOf="@+id/icon_plane_take_off"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/btn_clear_airport_from"
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="18dp"
-                android:background="@drawable/ic_baseline_close_24" />
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:visibility="gone"
+                android:background="@drawable/ic_baseline_close_24"
+                app:layout_constraintBaseline_toBaselineOf="@+id/auto_complete_airport_from"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/auto_complete_airport_from" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_airport_destination"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_airport_departure">
 
             <ImageView
                 android:id="@+id/icon_plane_land"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_gravity="center_vertical"
                 app:srcCompat="@drawable/ic_plane_land" />
 
             <AutoCompleteTextView
                 android:id="@+id/auto_complete_airport_to"
-                android:layout_width="315dp"
-                android:layout_height="64dp"
+                android:layout_width="317dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp"
                 android:dropDownWidth="300dp"
                 android:hint="@string/label_hint_arrival"
                 android:singleLine="true"
-                android:text="" />
+                android:text=""
+                app:layout_constraintStart_toEndOf="@+id/icon_plane_land"
+                app:layout_constraintTop_toBottomOf="@+id/auto_complete_airport_from" />
+
 
             <Button
                 android:id="@+id/btn_clear_airport_to"
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="18dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical"
                 android:background="@drawable/ic_baseline_close_24" />
 
         </LinearLayout>
@@ -88,25 +109,29 @@
             android:id="@+id/toggle_grp_return_flight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="10dp"
             app:checkedButton="@+id/btn_one_way"
-            app:singleSelection="true" >
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_airport_destination"
+            app:singleSelection="true">
 
             <Button
                 android:id="@+id/btn_one_way"
-                android:layout_width="wrap_content"
-                android:layout_height="61dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:text="@string/btn_toggle_one_way"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_return"
-                android:layout_width="wrap_content"
-                android:layout_height="61dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:text="@string/btn_toggle_return_trip"
                 android:textSize="18sp" />
@@ -116,56 +141,87 @@
             android:id="@+id/toggle_grp_comfort_class"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"
             app:checkedButton="@+id/btn_class_economy"
-            app:singleSelection="true" >
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toggle_grp_return_flight"
+            app:singleSelection="true">
 
             <Button
                 android:id="@+id/btn_class_economy"
-                android:layout_width="wrap_content"
-                android:layout_height="61dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:text="@string/btn_toggle_economy"
                 android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_class_business"
-                android:layout_width="wrap_content"
-                android:layout_height="61dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:text="@string/btn_toggle_business"
                 android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_class_comfort"
-                android:layout_width="wrap_content"
-                android:layout_height="61dp"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:text="@string/btn_toggle_comfort"
                 android:textSize="18sp" />
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
+        <ImageView
+            android:id="@+id/picture_city"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            app:cityPicture="@{simulationViewModel.pictureCityUrl}"
+            app:layout_constraintBottom_toTopOf="@+id/distance_value_km"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toggle_grp_comfort_class" />
+
         <TextView
             android:id="@+id/distance_value_km"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
             android:gravity="center_horizontal"
-            android:layout_marginTop="25dp"
+            android:text="@{@string/distance_in_kms(simulationViewModel.distanceValueKm)}"
             android:textSize="26sp"
-            android:text="@{@string/distance_in_kms(simulationViewModel.distanceValueKm)}" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/picture_city"
+            tools:layout_conversion_absoluteHeight="35dp"
+            tools:layout_conversion_absoluteWidth="392dp" />
 
         <Button
             android:id="@+id/btn_compute_footprint"
-            android:layout_width="180dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/btn_calculate_footprint"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/distance_value_km"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_conversion_absoluteHeight="65dp"
+            tools:layout_conversion_absoluteWidth="180dp"
+            android:onClick="@{() -> fragment.saveUserInputAndComputeFootprint()}"/>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
