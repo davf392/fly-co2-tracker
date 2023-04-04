@@ -1,4 +1,4 @@
-package com.idplus.flyco2tracker.adapter
+package com.idplus.flyco2tracker.ui.adapter
 
 import android.util.Log
 import android.widget.ImageView

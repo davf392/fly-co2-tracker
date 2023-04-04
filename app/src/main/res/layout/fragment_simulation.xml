@@ -3,15 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".simulation.SimulationFragment" >
+    tools:context=".ui.simulation.SimulationFragment" >
     <data>
         <variable
-            name="simulationViewModel"
-            type="com.idplus.flyco2tracker.simulation.SimulationViewModel" />
+            name="viewModel"
+            type="com.idplus.flyco2tracker.ui.simulation.SimulationViewModel" />
 
         <variable
             name="fragment"
-            type="com.idplus.flyco2tracker.simulation.SimulationFragment" />
+            type="com.idplus.flyco2tracker.ui.simulation.SimulationFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -183,7 +183,7 @@
             android:layout_height="0dp"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="20dp"
-            app:cityPicture="@{simulationViewModel.pictureCityUrl}"
+            app:cityPicture="@{viewModel.pictureCityUrl}"
             app:layout_constraintBottom_toTopOf="@+id/distance_value_km"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -196,7 +196,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:gravity="center_horizontal"
-            android:text="@{@string/distance_in_kms(simulationViewModel.distanceValueKm)}"
+            android:text="@{@string/distance_in_kms(viewModel.distanceValueKm)}"
             android:textSize="26sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

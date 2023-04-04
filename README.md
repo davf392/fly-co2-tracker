@@ -15,6 +15,7 @@ The following components from the Jetpack library are used :
 - Data Binding
 - Navigation
 - Safe Args
+- Coroutines
 
 ## Screenshots
 

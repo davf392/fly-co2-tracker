@@ -1,4 +1,4 @@
-package com.idplus.flyco2tracker.result
+package com.idplus.flyco2tracker.ui.result
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,11 +8,12 @@ import kotlin.math.roundToInt
 
 class ResultViewModel(distance: Int, returnTrip: Boolean, comfort: String): ViewModel() {
 
-    val TAG = ResultViewModel::class.java.toString()
-
-    private val RADIATIVE_FORCING_COEFF_CONSERVATIVE = 2
-    private val RADIATIVE_FORCING_COEFF_RECENT = 3
-    val CARBON_BUDGET_MAX = 2000
+    companion object {
+        const val TAG = "ResultViewModel"
+        const val RADIATIVE_FORCING_COEFFICIENT_CONSERVATIVE = 2
+        const val RADIATIVE_FORCING_COEFFICIENT_RECENT = 3
+        const val CARBON_BUDGET_MAX = 2000
+    }
 
     private var _targetCarbonBudget = MutableLiveData(0)
     val targetCarbonBudget: LiveData<Int> get() = _targetCarbonBudget
@@ -74,12 +75,15 @@ class ResultViewModel(distance: Int, returnTrip: Boolean, comfort: String): View
         return malus
     }
 
-    private fun getRadiativeForcingCoefficient(recentCoeff: Boolean): Int {
-        return if(recentCoeff) RADIATIVE_FORCING_COEFF_RECENT else RADIATIVE_FORCING_COEFF_CONSERVATIVE
+    private fun getRadiativeForcingCoefficient(recentCoefficient: Boolean): Int {
+        return if(recentCoefficient)
+            RADIATIVE_FORCING_COEFFICIENT_RECENT
+        else
+            RADIATIVE_FORCING_COEFFICIENT_CONSERVATIVE
     }
 
     private fun getUnitaryCarbonImpact(distanceOneWay: Int): Double {
-        var impact: Double
+        val impact: Double
 
         if (distanceOneWay < 500)
             impact = (0.161 + 0.181) / 2

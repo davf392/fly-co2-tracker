@@ -1,4 +1,4 @@
-package com.idplus.flyco2tracker.model
+package com.idplus.flyco2tracker.data.remote.model
 
 /**
  * Example of response from the wikipedia request

@@ -1,4 +1,4 @@
-package com.idplus.flyco2tracker.simulation
+package com.idplus.flyco2tracker.ui.simulation
 
 import android.location.Location
 import android.util.Log
@@ -6,20 +6,28 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.idplus.flyco2tracker.model.Airport
-import com.idplus.flyco2tracker.repository.SimulationRepository
+import com.idplus.flyco2tracker.ui.adapter.Airport
+import com.idplus.flyco2tracker.data.remote.repository.SimulationRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
 import java.io.InputStreamReader
+import javax.inject.Inject
 import kotlin.math.roundToInt
 
-const val TAG = "SimulationViewModel"
 
-class SimulationViewModel : ViewModel() {
 
-    private val repository = SimulationRepository()
+@HiltViewModel
+class SimulationViewModel @Inject constructor(
+    private val repository: SimulationRepository
+)
+    : ViewModel() {
+
+    companion object {
+        const val TAG = "SimulationViewModel"
+    }
 
     private var latitudeFrom: Double = 0.0
     private var longitudeFrom: Double = 0.0
@@ -31,23 +39,19 @@ class SimulationViewModel : ViewModel() {
     var airportDataLoaded: Boolean = false
     val airportList: ArrayList<Airport> = mutableListOf<Airport>() as ArrayList<Airport>
 
-    // initialise distance value live data to display in the layout
+    // initialize distance value live data to display in the layout
     private val _distanceValueKm = MutableLiveData(0)
     val distanceValueKm: LiveData<Int> get() = _distanceValueKm
 
     private var _pictureCityUrl = MutableLiveData("")
     val pictureCityUrl: LiveData<String> get() = _pictureCityUrl
 
-    init {
-        Log.d(TAG, "creating view model instance")
-    }
-
     /**
      *
      */
     fun readAirportDataFile(input: InputStream) {
         var string: String? = ""
-        val reader = BufferedReader(InputStreamReader(`input`))
+        val reader = BufferedReader(InputStreamReader(input))
 
         if(airportDataLoaded)
             return
@@ -55,9 +59,9 @@ class SimulationViewModel : ViewModel() {
         Log.d(TAG, "uploading information from airport data local file")
         while (true) {
             try {
-                if (reader.readLine().also { string = it } == null) break
-            }
-            catch (e: IOException) {
+                if (reader.readLine().also { string = it } == null)
+                    break
+            } catch (e: IOException) {
                 e.printStackTrace()
             }
             // if the string is not null
@@ -74,7 +78,7 @@ class SimulationViewModel : ViewModel() {
                 airportList.add(airport)
             }
         }
-        `input`.close()
+        input.close()
 
         airportDataLoaded = true
     }

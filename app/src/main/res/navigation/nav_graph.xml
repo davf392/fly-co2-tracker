@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/simulationFragment"
-        android:name="com.idplus.flyco2tracker.simulation.SimulationFragment"
+        android:name="com.idplus.flyco2tracker.ui.simulation.SimulationFragment"
         android:label="Fly CO2 Tracker"
         tools:layout="@layout/fragment_simulation" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.idplus.flyco2tracker.result.ResultFragment"
+        android:name="com.idplus.flyco2tracker.ui.result.ResultFragment"
         android:label="Vos émissions de CO2"
         tools:layout="@layout/fragment_result" >
         <argument

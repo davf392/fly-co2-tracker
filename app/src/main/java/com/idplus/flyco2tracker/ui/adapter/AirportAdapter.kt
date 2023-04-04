@@ -1,4 +1,4 @@
-package com.idplus.flyco2tracker.adapter
+package com.idplus.flyco2tracker.ui.adapter
 
 import android.app.Activity
 import android.content.Context
@@ -13,7 +13,6 @@ import android.widget.ArrayAdapter
 import android.widget.Filter
 import android.widget.TextView
 import com.idplus.flyco2tracker.R
-import com.idplus.flyco2tracker.model.Airport
 import java.text.Normalizer
 import java.text.Normalizer.normalize
 import java.util.*
@@ -21,14 +20,19 @@ import kotlin.collections.ArrayList
 import kotlin.math.min
 
 
-class AirportAdapter(private val mContext: Context, private val mLayoutResId: Int, airports: List<Airport>) :
+class AirportAdapter(
+    private val mContext: Context,
+    private val mLayoutResId: Int,
+    airports: List<Airport>
+) :
     ArrayAdapter<Airport>(mContext, mLayoutResId, airports) {
 
-    private val TAG = AirportAdapter::class.java.toString()
+    companion object {
+        const val TAG = "AirportAdapter"
+    }
 
     private var airport: MutableList<Airport> = ArrayList(airports)
     private var allAirports: List<Airport> = ArrayList(airports)
-
     private var userConstraint: String = ""
 
     override fun getCount() = airport.size
@@ -45,8 +49,9 @@ class AirportAdapter(private val mContext: Context, private val mLayoutResId: In
         }
 
         try {
-            val airportAutoCompleteItemName: TextView = convertView as TextView? ?: LayoutInflater.from(context).inflate(
-                R.id.airport_name, parent, false) as TextView
+            val airportAutoCompleteItemName = convertView as TextView? ?:
+                LayoutInflater.from(context).inflate(R.id.airport_name, parent, false) as TextView
+
             val airport: Airport = getItem(position)
 
             airportAutoCompleteItemName.text = airport.name

@@ -1,7 +1,7 @@
-package com.idplus.flyco2tracker.api
+package com.idplus.flyco2tracker.data.remote.api
 
-import com.idplus.flyco2tracker.Constants.Companion.URL_BASE
-import com.idplus.flyco2tracker.model.ResponseCityResult
+import com.idplus.flyco2tracker.data.remote.model.ResponseCityResult
+import com.idplus.flyco2tracker.utils.Constants.Companion.URL_BASE
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

@@ -1,7 +1,7 @@
-package com.idplus.flyco2tracker.repository
+package com.idplus.flyco2tracker.data.remote.repository
 
 import android.util.Log
-import com.idplus.flyco2tracker.api.AirportApi
+import com.idplus.flyco2tracker.data.remote.api.AirportApi
 import com.squareup.moshi.JsonDataException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
