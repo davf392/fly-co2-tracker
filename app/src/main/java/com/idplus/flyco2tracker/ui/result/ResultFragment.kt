@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.idplus.flyco2tracker.databinding.FragmentResultBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
 class ResultFragment : Fragment() {

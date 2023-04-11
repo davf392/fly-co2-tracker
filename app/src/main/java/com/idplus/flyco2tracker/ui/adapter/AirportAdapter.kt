@@ -2,6 +2,7 @@ package com.idplus.flyco2tracker.ui.adapter
 
 import android.app.Activity
 import android.content.Context
+import android.content.ContextWrapper
 import android.graphics.Color
 import android.text.Spannable
 import android.text.SpannableString
@@ -44,7 +45,8 @@ class AirportAdapter(
         val view = super.getView(position, convertView, parent)
         var convertView = convertView
         if (convertView == null) {
-            val inflater = (mContext as Activity).layoutInflater
+            val context = (mContext as ContextWrapper).baseContext
+            val inflater = (context as Activity).layoutInflater
             convertView = inflater.inflate(mLayoutResId, parent, false)
         }
 

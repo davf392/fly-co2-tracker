@@ -1,4 +1,4 @@
-package com.idplus.flyco2tracker.model
+package com.idplus.flyco2tracker.ui.adapter
 
 class Airport {
     var name: String = ""

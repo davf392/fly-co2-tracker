@@ -19,17 +19,16 @@ import com.idplus.flyco2tracker.ui.adapter.Airport
 import com.idplus.flyco2tracker.ui.adapter.AirportAdapter
 import com.idplus.flyco2tracker.R
 import com.idplus.flyco2tracker.databinding.FragmentSimulationBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class SimulationFragment : Fragment() {
 
     private lateinit var navController: NavController
     private lateinit var binding: FragmentSimulationBinding
-    private val simulationViewModel: SimulationViewModel by viewModels()
+    private val simulationViewModel by viewModels<SimulationViewModel>()
 
-    companion object {
-        const val TAF = "SimulationFragment"
-    }
+    companion object { const val TAF = "SimulationFragment" }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val fragmentBinding = FragmentSimulationBinding.inflate(inflater, container, false)

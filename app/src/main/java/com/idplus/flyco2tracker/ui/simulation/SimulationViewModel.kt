@@ -25,9 +25,7 @@ class SimulationViewModel @Inject constructor(
 )
     : ViewModel() {
 
-    companion object {
-        const val TAG = "SimulationViewModel"
-    }
+    companion object { const val TAG = "SimulationViewModel" }
 
     private var latitudeFrom: Double = 0.0
     private var longitudeFrom: Double = 0.0
@@ -46,6 +44,9 @@ class SimulationViewModel @Inject constructor(
     private var _pictureCityUrl = MutableLiveData("")
     val pictureCityUrl: LiveData<String> get() = _pictureCityUrl
 
+    init {
+        Log.d(TAG, "initializing simulation view model")
+    }
     /**
      *
      */
